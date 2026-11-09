@@ -1,31 +1,100 @@
-.App {
-  text-align: center;
+/* Importação da fonte Roboto para visual moderno e limpo */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ==========================================
+   1. ESTILOS DA NAVBAR (HeaderNavbar)
+   ========================================== */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand img {
+  object-fit: contain;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-dark .navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.2s ease-in-out;
 }
 
-.heart {
-  color: #ff0000;
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #ffcc00 !important; /* Amarelo institucional para destaque ao passar o mouse */
 }
 
-.small {
-  font-size: 0.75rem;
+/* Ajustes nos dropdowns da navbar */
+.dropdown-menu-dark {
+  background-color: #00135a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: #0028ba;
+  color: #ffffff;
+}
+
+/* ==========================================
+   2. ESTILOS DO CARROSSEL (NewsCarousel)
+   ========================================== */
+.carousel-item {
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.carousel-caption h2 {
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.max-w-75 {
+  max-width: 75%;
+}
+
+/* ==========================================
+   3. ESTILOS DA TABELA E MODAL (SalaryTable)
+   ========================================== */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 29, 133, 0.05);
+}
+
+/* Ajuste no botão de fechar o modal */
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Ajustes de responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .carousel-caption h2 {
+    font-size: 1.3rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem !important;
+  }
+  
+  .max-w-75 {
+    max-width: 95%;
+  }
 }
